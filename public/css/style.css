@@ -1,0 +1,13 @@
+/* Warna untuk tombol DataTable */
+.dataTables_wrapper .dt-buttons .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: solid red;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+/* Hover state tombol DataTable */
+.dataTables_wrapper .dt-buttons .btn:hover {
+    background-color: #45a049;
+}
