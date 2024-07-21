@@ -79,9 +79,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center mb-3">
+                        {{-- <div class="text-center mb-3">
                             Belum punya akun? <a href="register">Sign up</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

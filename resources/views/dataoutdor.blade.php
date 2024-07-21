@@ -43,6 +43,7 @@
                                             @endif
                                         </td>
                                         <td>{{ $dt->intens_cahaya }}</td>
+                                        {{-- <td>{{ $dt->hari }}</td> --}}
                                         <td>{{ \Carbon\Carbon::parse($dt->hari)->translatedFormat('l') }}</td>
                                         <td>{{ $dt->datetime }}</td>
                                     </tr>

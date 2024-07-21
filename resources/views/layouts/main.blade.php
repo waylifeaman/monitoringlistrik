@@ -16,17 +16,27 @@
     <link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
 
     <title>{{ $title ?? '' }} : Kantorku.cloud</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href={{ asset('adminkit-main/static/css/app.css') }} rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- Jika belum memasukkan Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        var autoloadid = setInterval(function() {
+            $('#responscontainer').load('./data.blade.php');
+        }, 1000);
+    </script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    @livewireStyles
 </head>
 
 <body>
@@ -48,7 +58,12 @@
                                 class="align-middle">Beranda</span>
                         </a>
                     </li>
-
+                    <li class="sidebar-item mb-2 {{ Route::is('listrik') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="{{ route('listrik') }}">
+                            <i class="align-middle" data-feather="zap"></i> <span class="align-middle">Data
+                                Tegangan</span>
+                        </a>
+                    </li>
                     <li class="sidebar-item mb-2 {{ Route::is('indor') ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ route('indor') }}">
                             <i class="align-middle" data-feather="thermometer"></i> <span class="align-middle">Data
@@ -61,12 +76,7 @@
                                 Outdor</span>
                         </a>
                     </li>
-                    <li class="sidebar-item mb-2 {{ Route::is('listrik') ? 'active' : '' }}">
-                        <a class="sidebar-link" href="{{ route('listrik') }}">
-                            <i class="align-middle" data-feather="zap"></i> <span class="align-middle">Data
-                                Tegangan</span>
-                        </a>
-                    </li>
+
                     <li class="sidebar-item mb-2 {{ Route::is('angin') ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ route('angin') }}">
                             <i class="align-middle" data-feather="wind"></i> <span class="align-middle">Data
@@ -88,7 +98,9 @@
                 <a class="sidebar-toggle js-sidebar-toggle">
                     <i class="hamburger align-self-center"></i>
                 </a>
-
+                <div class="card-title mt-2">
+                    <h3 class="text-muted">PLN Icon Plus Unit Layanan DIY</h3>
+                </div>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-left">
                         <li class="nav-item dropdown">
@@ -96,7 +108,7 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-align">
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown"
                                 data-bs-toggle="dropdown">
                                 <div class="position-relative">
@@ -242,7 +254,7 @@
                                     <a href="#" class="text-muted">Show all messages</a>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown">
                             <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
                                 data-bs-toggle="dropdown">
@@ -256,7 +268,7 @@
                                 <span class="text-dark">{{ auth()->user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                                <a class="dropdown-item" href="/profile/form"><i class="align-middle me-1"
                                         data-feather="user"></i> Ubah Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout-user') }}">Log out</a>
@@ -297,7 +309,7 @@
     <script src="{{ asset('/js/jquery.mask.min.js') }}"></script>
     <!-- include summernote css/js-->
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 
     <!-- DataTables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -326,19 +338,10 @@
         integrity="sha384-pzjw8kt+cpnGFFB8b8jc5fTTh6VhuFgo2Y8fCXTkEAg484PJZO9SCeiSFfH2RzoD" crossorigin="anonymous">
     </script>
 
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable({
-                pageLength: 15,
-                pagingType: 'full_numbers',
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            });
-        });
-    </script>
-
+    <script></script>
+    {{-- <script src="js/script-chart-baru.js"></script> --}}
+    <script src="js/script.js"></script>
+    @livewireScripts
 </body>
 
 </html>

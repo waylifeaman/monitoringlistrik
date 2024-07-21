@@ -7,7 +7,7 @@
                 <div class="head mx-4 mt-4 mb-0">
                     <p>Pilih Export</p>
                 </div>
-                <div class="card-body">
+                <div class="card-body" wire:poll.1s>
                     <div class="tabel table-responsive">
                         <table id="example" class="table table-striped">
                             <thead>

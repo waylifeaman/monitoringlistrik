@@ -17,7 +17,7 @@ class DatalistrikController extends Controller
     {
         $title = "Data Listrik";
         $id = 1;
-        $data = Datalistrik::latest()->take(1450)->get();
+        $data = datalistrik::latest()->take(1450)->get();
         return view('datalistrik', compact('data', 'id', 'title'));
     }
 

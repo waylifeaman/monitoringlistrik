@@ -182,6 +182,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        // ConsoleTVs\Charts\ChartsServiceProvider::class,
+
 
         /*
          * Package Service Providers...

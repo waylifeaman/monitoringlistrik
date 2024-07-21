@@ -27,7 +27,7 @@ class DataindorController extends Controller
     {
         $title = "Data Indor";
         $id = 1;
-        $data = Dataindor::latest()->take(1450)->get();
+        $data = dataindor::latest()->take(10100)->get();
         return view('dataindor', compact('data', 'id', 'title'));
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dataindor;
 use App\Models\dataoutdor;
 use App\Http\Requests\StoredataoutdorRequest;
 use App\Http\Requests\UpdatedataoutdorRequest;
@@ -17,7 +18,7 @@ class DataoutdorController extends Controller
     {
         $title = "Data Outdor";
         $id = 1;
-        $data = Dataoutdor::latest()->take(1450)->get();
+        $data = dataoutdor::latest()->take(10100)->get();
         return view('dataoutdor', compact('data', 'id', 'title'));
     }
 

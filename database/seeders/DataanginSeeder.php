@@ -16,15 +16,15 @@ class DataanginSeeder extends Seeder
     public function run()
     {
         // Contoh data seed, Anda dapat menyesuaikan dengan kebutuhan Anda
-        Dataangin::create([
-            'kec_angin' => 15.0,
-            'hari' => 'sunday',
-            'datetime' => now(),
-        ]);
+        // dataangin::create([
+        //     'kec_angin' => 15.0,
+        //     'hari' => 'sunday',
+        //     'datetime' => now(),
+        // ]);
 
-        Dataangin::create([
-            'kec_angin' => 18.5,
-            'hari' => 'monday',
+        dataangin::create([
+            'kec_angin' => 12,
+            'hari' => 'Tuesday',
             'datetime' => now(),
         ]);
 

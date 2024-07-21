@@ -18,34 +18,18 @@ class DatalistrikSeeder extends Seeder
     {
         // Contoh data seed, Anda dapat menyesuaikan dengan kebutuhan Anda
         Datalistrik::create([
-            'tegangan_1' => 220.0,
-            'arus_1' => 5.0,
-            'daya_1' => 1100.0,
+            'tegangan_1' => 20.0,
+            'arus_1' => 34.0,
+            'daya_1' => 400.0,
             'tegangan_2' => 220.0,
             'arus_2' => 6.0,
             'daya_2' => 1320.0,
             'tegangan_3' => 220.0,
             'arus_3' => 7.0,
             'daya_3' => 1540.0,
-            'daya_total' => 3960.0,
-            'sisa_daya' => 40.0,
+            'daya_total' => 5340.0,
+            'sisa_daya' => 4345.0,
             'hari' => 'Monday',
-            'datetime' => now(),
-        ]);
-
-        Datalistrik::create([
-            'tegangan_1' => 220.0,
-            'arus_1' => 6.0,
-            'daya_1' => 1320.0,
-            'tegangan_2' => 220.0,
-            'arus_2' => 7.0,
-            'daya_2' => 1540.0,
-            'tegangan_3' => 220.0,
-            'arus_3' => 8.0,
-            'daya_3' => 1760.0,
-            'daya_total' => 4620.0,
-            'sisa_daya' => 20.0,
-            'hari' => 'Tuesday',
             'datetime' => now(),
         ]);
     }

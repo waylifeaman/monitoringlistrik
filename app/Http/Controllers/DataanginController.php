@@ -17,7 +17,7 @@ class DataanginController extends Controller
     {
         $title = "Data Angin";
         $id = 1;
-        $data = Dataangin::latest()->take(1450)->get();
+        $data = dataangin::latest()->take(1450)->get();
         return view('dataangin', compact('data', 'id', 'title'));
     }
 

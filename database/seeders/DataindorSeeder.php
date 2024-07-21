@@ -20,8 +20,8 @@ class DataindorSeeder extends Seeder
         $day = date('l');
         dataindor::create(
             [
-                'suhu_ind' => '53',
-                'kelembaban_ind' => '33',
+                'suhu_ind' => '52',
+                'kelembaban_ind' => '63',
                 'hari' => $day,
                 'datetime' => $tgl
             ],
