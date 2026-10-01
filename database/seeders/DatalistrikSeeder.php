@@ -17,20 +17,22 @@ class DatalistrikSeeder extends Seeder
     public function run()
     {
         // Contoh data seed, Anda dapat menyesuaikan dengan kebutuhan Anda
-        Datalistrik::create([
-            'tegangan_1' => 20.0,
-            'arus_1' => 34.0,
-            'daya_1' => 400.0,
-            'tegangan_2' => 220.0,
-            'arus_2' => 6.0,
-            'daya_2' => 1320.0,
-            'tegangan_3' => 220.0,
-            'arus_3' => 7.0,
-            'daya_3' => 1540.0,
-            'daya_total' => 5340.0,
-            'sisa_daya' => 4345.0,
-            'hari' => 'Monday',
-            'datetime' => now(),
-        ]);
+        for ($i = 1; $i <= 100; $i++) {
+            Datalistrik::create([
+                'tegangan_1' => rand(0, 100), // Generate random voltage between 0 and 100
+                'arus_1' => rand(0, 100), // Generate random current between 0 and 100
+                'daya_1' => rand(0, 100), // Generate random power between 0 and 100
+                'tegangan_2' => rand(0, 100), // Generate random voltage between 0 and 100
+                'arus_2' => rand(0, 100), // Generate random current between 0 and 100
+                'daya_2' => rand(0, 100), // Generate random power between 0 and 100
+                'tegangan_3' => rand(0, 100), // Generate random voltage between 0 and 100
+                'arus_3' => rand(0, 100), // Generate random current between 0 and 100
+                'daya_3' => rand(0, 100), // Generate random power between 0 and 100
+                'daya_total' => rand(0, 300), // Generate random total power between 0 and 300
+                'sisa_daya' => rand(0, 300), // Generate random remaining power between 0 and 300
+                'hari' => date('l'), // Get the current day of the week
+                'datetime' => now(), // Get the current date and time
+            ]);
+        }
     }
 }

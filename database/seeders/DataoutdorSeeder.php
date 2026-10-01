@@ -16,27 +16,17 @@ class DataoutdorSeeder extends Seeder
     public function run()
     {
         // Contoh data seed, Anda dapat menyesuaikan dengan kebutuhan Anda
-        dataoutdor::create([
-            'angin_id' => 2,
-            'suhu_out' => 54,
-            'kelembaban_out' => 23,
-            'hujan' => 0,
-            'kond_cahaya' => 0,
-            'intens_cahaya' => 120,
-            'hari' => 'Tuesday',
-            'datetime' => now(),
-        ]);
-
-        // DataOutdor::create([
-        //     'suhu_out' => 38.0,
-        //     'kelembaban_out' => 55.5,
-        //     'hujan' => '0',
-        //     'kond_cahaya' => '0',
-        //     'intens_cahaya' => 780.0,
-        //     'hari' => 'Thuesday',
-        //     'datetime' => now(),
-        // ]);
-
-        // Tambahkan data seed lainnya sesuai kebutuhan
+        for ($i = 1; $i <= 100; $i++) {
+            Dataoutdor::create([
+                'angin_id' => rand(1, 10), // Generate random angin_id between 1 and 10
+                'suhu_out' => rand(0, 100), // Generate random temperature between 0 and 100
+                'kelembaban_out' => rand(0, 100), // Generate random humidity between 0 and 100
+                'hujan' => rand(0, 1), // Generate random rain value (0 or 1)
+                'kond_cahaya' => rand(0, 1), // Generate random light condition (0 or 1)
+                'intens_cahaya' => rand(0, 100), // Generate random light intensity between 0 and 100
+                'hari' => date('l'), // Get the current day of the week
+                'datetime' => now(), // Get the current date and time
+            ]);
+        }
     }
 }

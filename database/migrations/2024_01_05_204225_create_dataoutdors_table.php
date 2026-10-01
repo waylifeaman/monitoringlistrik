@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('dataoutdors', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('angin_id')->nullable();
             $table->float('suhu_out');
             $table->float('kelembaban_out');
             $table->string('hujan');

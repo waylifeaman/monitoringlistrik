@@ -21,12 +21,13 @@ class DataanginSeeder extends Seeder
         //     'hari' => 'sunday',
         //     'datetime' => now(),
         // ]);
-
-        dataangin::create([
-            'kec_angin' => 12,
-            'hari' => 'Tuesday',
-            'datetime' => now(),
-        ]);
+        for ($i = 1; $i <= 100; $i++) {
+            dataangin::create([
+                'kec_angin' => rand(0, 100), // Generate random wind speed between 0 and 100
+                'hari' => date('l'), // Get the current day of the week
+                'datetime' => now(), // Get the current date and time
+            ]);
+        }
 
         // Tambahkan data seed lainnya sesuai kebutuhan
     }

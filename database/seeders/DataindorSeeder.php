@@ -18,14 +18,15 @@ class DataindorSeeder extends Seeder
         date_default_timezone_set('Asia/Jakarta');
         $tgl = date('H:i:s j-n-Y');
         $day = date('l');
-        dataindor::create(
-            [
-                'suhu_ind' => '52',
-                'kelembaban_ind' => '63',
-                'hari' => $day,
-                'datetime' => $tgl
-            ],
 
-        );
+        for ($i = 1; $i <= 100; $i++) {
+            dataindor::create([
+                'suhu_ind' => rand(20, 40), // Generate random temperature between 20 and 40
+                'kelembaban_ind' => rand(30, 70), // Generate random humidity between 30 and 70
+                'hari' => date('l'), // Get the current day of the week
+                'datetime' => now(), // Get the current date and time
+            ]);
+        }
+       
     }
 }
